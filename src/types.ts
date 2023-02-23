@@ -94,7 +94,11 @@ export function basicTypeName(
     case FieldDescriptorProto_Type.TYPE_BYTES:
       if (options.env === EnvOption.NODE) {
         return code`Buffer`;
-      } else {
+      } 
+      else if (options.env === EnvOption.BOTH) {
+        return code`ArrayLike<number>`;
+      }
+      else {
         return code`Uint8Array`;
       }
     case FieldDescriptorProto_Type.TYPE_MESSAGE:
