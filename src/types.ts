@@ -96,7 +96,7 @@ export function basicTypeName(
         return code`Buffer`;
       } 
       else if (options.env === EnvOption.BOTH) {
-        return code`ArrayLike<number>`;
+        return code`number[]`;
       }
       else {
         return code`Uint8Array`;
